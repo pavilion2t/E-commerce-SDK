@@ -32,4 +32,30 @@ var f = () => ({ a: 1})
 // params
 var f = (a,b,c) => console.log(a,b,c)
 ```
+* this指向定义时所在的对象
+```
+var o = {
+  a: 1,
+  f: function() { 
+       setTimeout(function() { 
+         console.log(this)
+       }, 200)
+   }
+}
+o.f() // Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
+```
+更改为箭头函数：
+```
+var o = {
+  a: 1,
+  f: function() { 
+       setTimeout(() => { 
+         console.log(this)
+       }, 200)
+   }
+}
+o.f() // {a: 1, f: ƒ}
+```
+
+
 
