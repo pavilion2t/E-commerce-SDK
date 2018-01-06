@@ -1,3 +1,4 @@
+import { getId } from "../common/utils.js"
 const template = (opts = {}) => {
   // tips: delete autocomplete
   const autocompleteTpl = `
@@ -39,7 +40,7 @@ const template = (opts = {}) => {
 
 export default (conf = {}) => {
   conf.container.innerHTML = template(conf);
-  const $noAutocomplete = document.getElementById('no-autocomplete');
+  const $noAutocomplete = getId('no-autocomplete');
   if($noAutocomplete) {
     $noAutocomplete.style.opacity = "0";
     $noAutocomplete.style.heigth = "0";
