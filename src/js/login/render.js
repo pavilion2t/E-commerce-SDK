@@ -39,4 +39,9 @@ const template = (opts = {}) => {
 
 export default (conf = {}) => {
   conf.container.innerHTML = template(conf);
+  const $noAutocomplete = document.getElementById('no-autocomplete');
+  if($noAutocomplete) {
+    $noAutocomplete.style.opacity = "0";
+    $noAutocomplete.style.heigth = "0";
+  }
 }
