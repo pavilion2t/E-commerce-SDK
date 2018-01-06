@@ -33,6 +33,8 @@ var f = () => ({ a: 1})
 var f = (a,b,c) => console.log(a,b,c)
 ```
 * this指向定义时所在的对象
+* 不可以作为构造函数（不能使用new）
+* 没有argumens对象
 ```
 var o = {
   a: 1,
@@ -44,7 +46,7 @@ var o = {
 }
 o.f() // Window {postMessage: ƒ, blur: ƒ, focus: ƒ, close: ƒ, frames: Window, …}
 ```
-更改为箭头函数：
+举个栗子：更改为箭头函数
 ```
 var o = {
   a: 1,
@@ -55,6 +57,11 @@ var o = {
    }
 }
 o.f() // {a: 1, f: ƒ}
+```
+举个栗子：没有argumens对象
+```
+var f = (a, b) => console.log(arguments[0])
+f(1 ,2) // Uncaught ReferenceError: arguments is not defined
 ```
 
 
