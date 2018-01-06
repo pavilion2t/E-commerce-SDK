@@ -4,4 +4,4 @@ const getId = (id) => {
     Math.random * 100000));
   retrun dom;
 }
-export { getId }
+export { getId as $ }
