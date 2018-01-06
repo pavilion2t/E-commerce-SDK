@@ -1,3 +1,7 @@
+import "../common/polyfill.js"
+import render from "./render.js"
+import bindEvent from "./event.js"
+
 const login = (opts = {}) => {
   const defaultOpts = {
     loginBtnText: "登 录"
@@ -11,5 +15,6 @@ const login = (opts = {}) => {
 }
 
 export { login }
-// diference between export & module.export
-// module.exports = login
+// diference between export & module.export 
+// export default login  输出的是值的引用，所以不能直接输出1，一定是指向内部的变量
+// module.exports = login  输出值的拷贝，可以直接输出1
